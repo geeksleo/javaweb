@@ -1,18 +1,17 @@
 package model;
 
-public class Usuario {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "usuario")
+public class Usuario extends BasicModel {
 	private Long id;
 	private String login;
 	private String senha;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
+    @Column(name = "login")
 	public String getLogin() {
 		return login;
 	}
@@ -21,6 +20,7 @@ public class Usuario {
 		this.login = login;
 	}
 
+	@Column(name = "senha")
 	public String getSenha() {
 		return senha;
 	}
